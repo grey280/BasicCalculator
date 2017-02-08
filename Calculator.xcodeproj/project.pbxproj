@@ -54,9 +54,9 @@
 		2D1BF89D1E4A3E5C00DB4D0D /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				2D1BF89E1E4A3E5C00DB4D0D /* AppDelegate.swift */,
 				2D1BF8A01E4A3E5C00DB4D0D /* ViewController.swift */,
 				2D1BF8A21E4A3E5C00DB4D0D /* Main.storyboard */,
+				2D1BF89E1E4A3E5C00DB4D0D /* AppDelegate.swift */,
 				2D1BF8A51E4A3E5C00DB4D0D /* Assets.xcassets */,
 				2D1BF8A71E4A3E5C00DB4D0D /* LaunchScreen.storyboard */,
 				2D1BF8AA1E4A3E5C00DB4D0D /* Info.plist */,
