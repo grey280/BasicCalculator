@@ -22,9 +22,9 @@ class ViewController: UIViewController {
             displayField.text = displayField.text! + digitPressed
         }
     }
+    
     @IBAction func deleteKeyPress(_ sender: UIButton) { // Handles user pressing the delete key
         let length = displayField.text!.characters.count
-//        print(length)
         guard length > 0 else { // If the length is 0 and you try to continue, it'll mean Problems
             return
         }
