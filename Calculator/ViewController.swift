@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayField: UILabel!
     
     var userWasTyping = false
+    var pointWasPressed = false
     
     var displayValue: Double{
         get {
@@ -24,14 +25,11 @@ class ViewController: UIViewController {
     
     @IBAction func digitPress(_ sender: UIButton) { // Handles the user pressing a digit
         let digitPressed = sender.title(for: .normal)! // Which digit did they press?
-        if !userWasTyping{ // If this is the first digit they're inputting, remove the zero first
+        if !userWasTyping {
             userWasTyping = true
             displayValue = Double(digitPressed)!
-        }else{ // Otherwise, just add on the new digit
-            var temp = String(displayValue)
-            temp += digitPressed
-            displayValue = Double(temp)!
-//            displayField.text = displayField.text! + digitPressed
+        }else{
+            displayValue = displayValue * 10 + Double(digitPressed)!
         }
     }
     
