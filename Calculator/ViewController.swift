@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var displayField: UILabel!
+    @IBOutlet private weak var displayField: UILabel!
     
-    var userWasTyping = false
-    var pointWasPressed = false
+    private var userWasTyping = false
+    private var pointWasPressed = false
     
-    var displayValue: Double{ // An easier way of changing the way we access the display
+    private var displayValue: Double{ // An easier way of changing the way we access the display
         get {
             return Double(displayField.text!)!
         }
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func digitPress(_ sender: UIButton) { // Handles the user pressing a digit
+    @IBAction private func digitPress(_ sender: UIButton) { // Handles the user pressing a digit
         let digitPressed = sender.title(for: .normal)! // Which digit did they press?
         if !userWasTyping {
             userWasTyping = true
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func deleteKeyPress(_ sender: UIButton) { // Handles user pressing the delete key
+    @IBAction private func deleteKeyPress(_ sender: UIButton) { // Handles user pressing the delete key
         var temp = displayField.text!
         let length = temp.characters.count
         guard length > 0 else { // If the length is 0 and you try to continue, it'll mean Problems
