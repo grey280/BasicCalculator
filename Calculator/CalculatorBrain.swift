@@ -54,6 +54,13 @@ class CalculatorBrain{
     
     private var pending: PendingBinaryOperationInfo?
     
+    private func executePendingBinaryOperation(){
+        if pending != nil{
+            accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
+            pending = nil
+        }
+    }
+    
     func performOperation(symbol: String){
         if let operation = operations[symbol]{
             switch operation{
@@ -64,10 +71,7 @@ class CalculatorBrain{
                 case .BinaryOperation(let opFunction):
                     pending = PendingBinaryOperationInfo(binaryFunction: opFunction, firstOperand: accumulator)
                 case .Equals:
-                    if pending != nil{
-                        accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
-                        pending = nil
-                    }
+                executePendingBinaryOperation()
             }
         }
     }
