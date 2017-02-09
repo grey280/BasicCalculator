@@ -40,17 +40,13 @@ class ViewController: UIViewController {
         guard length > 0 else { // If the length is 0 and you try to continue, it'll mean Problems
             return
         }
-        temp.remove(at: temp.index(before: temp.endIndex))
+        temp.remove(at: temp.index(temp.endIndex, offsetBy: -2))
+        temp.remove(at: temp.index(temp.endIndex, offsetBy: -2))
         if temp.characters.count < 1 {
             displayValue = 0.0
         }else{
-            displayValue = Double(temp)!
+            displayValue = Double(temp)! / 10
         }
-//        displayField.text!.remove(at: displayField.text!.index(before: (displayField.text!.endIndex))) // Remove the last character
-//        if displayField.text!.characters.count < 1 { // If that was the *only* character that you just removed, reset to the default-zero
-//            displayField.text = "0"
-//            userWasTyping = false
-//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
