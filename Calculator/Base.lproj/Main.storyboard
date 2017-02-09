@@ -161,8 +161,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IAS-Qr-3I5">
                                         <rect key="frame" x="0.0" y="462.5" width="322" height="115.5"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnj-Qz-6Z5">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="115.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="±"/>
+                                                <connections>
+                                                    <action selector="performOperationWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nP7-15-yhX"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-hB-BNN">
-                                                <rect key="frame" x="0.0" y="0.0" width="161" height="115.5"/>
+                                                <rect key="frame" x="107.5" y="0.0" width="107" height="115.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="0"/>
                                                 <connections>
@@ -170,7 +178,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50o-rC-lle">
-                                                <rect key="frame" x="161" y="0.0" width="161" height="115.5"/>
+                                                <rect key="frame" x="214.5" y="0.0" width="107.5" height="115.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="="/>
                                                 <connections>
