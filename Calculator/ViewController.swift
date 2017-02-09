@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var userWasTyping = false
     var pointWasPressed = false
     
-    var displayValue: Double{
+    var displayValue: Double{ // An easier way of changing the way we access the display
         get {
             return Double(displayField.text!)!
         }
@@ -35,16 +35,15 @@ class ViewController: UIViewController {
     
     @IBAction func deleteKeyPress(_ sender: UIButton) { // Handles user pressing the delete key
         var temp = displayField.text!
-//        let length = displayField.text!.characters.count
         let length = temp.characters.count
         guard length > 0 else { // If the length is 0 and you try to continue, it'll mean Problems
             return
         }
+        temp.remove(at: temp.index(temp.endIndex, offsetBy: -2)) // This and next line: removes ones digit, decimal point
         temp.remove(at: temp.index(temp.endIndex, offsetBy: -2))
-        temp.remove(at: temp.index(temp.endIndex, offsetBy: -2))
-        if temp.characters.count < 1 {
+        if temp.characters.count < 1 { // Just set it to zero if it's zero
             displayValue = 0.0
-        }else{
+        }else{ // Otherwise, convert back to a double, divide by ten so tens becomes ones, etc.
             displayValue = Double(temp)! / 10
         }
     }
