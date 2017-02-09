@@ -34,6 +34,16 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func performOperation(sender: UIButton){
+        if userWasTyping{
+            brain.setOperand(operand: displayValue)
+            userWasTyping = false
+        }
+        if let mathematicalSymbol = sender.currentTitle {
+            brain.performOperation(symbol: mathematicalSymbol)
+        }
+        displayValue = brain.result
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
