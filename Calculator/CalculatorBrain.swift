@@ -18,15 +18,15 @@ class CalculatorBrain{
     }
     
     // The different categories of operations we can handle.
-    enum Operation {
+    private enum Operation {
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
         case Equals
     }
     
-    // I'm leaving operations public for now - could adding new operations be a useful thing from elsewhere?
-    var operations: Dictionary<String, Operation> = [
+    // The different operations we can handle
+    private var operations: Dictionary<String, Operation> = [
         "π": Operation.Constant(M_PI),
         "e": Operation.Constant(M_E),
         "√": Operation.UnaryOperation(sqrt),
@@ -40,7 +40,7 @@ class CalculatorBrain{
     ]
     
     // Need the ability to handle binary operations, which need somewhere to be stored briefly
-    struct PendingBinaryOperationInfo {
+    private struct PendingBinaryOperationInfo {
         var binaryFunction: (Double, Double) -> Double
         var firstOperand: Double
     }
