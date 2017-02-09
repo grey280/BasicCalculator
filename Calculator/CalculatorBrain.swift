@@ -9,9 +9,13 @@
 import Foundation
 
 class CalculatorBrain{
-    func setOperand (operand: Double){ }
+    func setOperand (operand: Double){
+        
+    }
     
-    func performOperation(symbol: String){ }
+    func performOperation(symbol: String){
+        
+    }
     
     var result: Double{
         get{

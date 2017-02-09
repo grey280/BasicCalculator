@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     private var userWasTyping = false
     private var pointWasPressed = false
+    private var brain = CalculatorBrain()
     
     private var displayValue: Double{ // An easier way of changing the way we access the display
         get {
