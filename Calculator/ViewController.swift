@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func digitPress(_ sender: UIButton) { // Handles the user pressing a digit
-        let digitPressed = sender.title(for: .normal)! // Which digit did they press?
-        if !userWasTyping {
+        let digitPressed = sender.title(for: .normal)!  // Which digit did they press?
+        if !userWasTyping {                             // If they weren't typing, replace the zero; otherwise, add digit
             userWasTyping = true
             displayValue = Double(digitPressed)!
         }else{
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func performOperation(sender: UIButton){
+    @IBAction private func performOperation(sender: UIButton){  // Main interaction with the CalculatorBrain; handles operation keys being pressed
         if userWasTyping{
             brain.setOperand(operand: displayValue)
             userWasTyping = false
@@ -44,6 +44,9 @@ class ViewController: UIViewController {
         }
         displayValue = brain.result
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
